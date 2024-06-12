@@ -1,36 +1,27 @@
 import json
 import requests
 
-categories = {1:"Seed Pokemon",2:"Seed Pokemon",3:"Seed Pokemon",
-            4:"Lizard Pokemon",5:"Flame Pokemon",6:"Flame Pokemon",
-            7:"Tiny Turtle Pokemon",8:"Turtle Pokemon",9:"Shellfish Pokemon",
-            10:"Worm Pokemon",11:"Cocoon Pokemon",12:"Butterfly Pokemon",
-            13:"Hairy Bug Pokemon",14:"Cocoon Pokemon",15:"Poison Bee Pokemon",
-            16:"Tiny Bird Pokemon",17:"Bird Pokemon",18:"Bird Pokemon",
-            19:"Mouse Pokemon",20:"Mouse Pokemon",21:"Tiny Bird Pokemon",
-            22:"Beak Pokemon",23:"Snake Pokemon",24:"Cobra Pokemon",
-            25:"Mouse Pokemon",26:"Mouse Pokemon",27:"Mouse Pokemon",
-            28:"Mouse Pokemon",29:"Poison Pin Pokemon",30:"Poison Pin Pokemon",
-            31:"Drill Pokemon",32:"Poison Pin Pokemon",33:"Poison Pin Pokemon",
-            34:"Drill Pokemon",35:"Fairy Pokemon",36:"Fairy Pokemon",
-            37:"Fox Pokemon",38:"Fox Pokemon",39:"Balloon Pokemon",
-            40:"Balloon Pokemon",41:"Bat Pokemon",42:"Bat Pokemon",
-            43:"Weed Pokemon",44:"Weed Pokemon",45:"Flower Pokemon",
-            46:"Mushroom Pokemon",47:"Mushroom Pokemon",48:"Insect Pokemon",
-            49:"Poison Moth Pokemon",50:"Mole Pokemon",51:"Mole Pokemon",
-            52:"Scratch Cat Pokemon",53:"Classy Cat Pokemon",54:"Duck Pokemon",
-            55:"Duck Pokemon",56:"Pig Monkey Pokemon",57:"Pig Monkey Pokemon",
-            58:"Puppy Pokemon",59:"Legendary Pokemon",60:"Tadpole Pokemon",
-            61:"Tadpole Pokemon",62:"Tadpole Pokemon",63:"Psi Pokemon",
-            64:"Psi Pokemon",65:"Psi Pokemon",66:"Superpower Pokemon",
-            67:"Superpower Pokemon",68:"Superpower Pokemon",69:"Flower Pokemon",
-            70:"Flycatcher Pokemon",71:"Flycatcher Pokemon",72:"Jellyfish Pokemon",
-            73:"Jellyfish Pokemon",74:"Rock Pokemon",75:"Rock Pokemon",
-            76:"Megaton Pokemon",77:"Fire Horse Pokemon",78:"Fire Horse Pokemon"
+categories = {1:"Seed Pokemon",2:"Seed Pokemon",3:"Seed Pokemon",4:"Lizard Pokemon",5:"Flame Pokemon",6:"Flame Pokemon",7:"Tiny Turtle Pokemon",
+    8:"Turtle Pokemon",9:"Shellfish Pokemon",10:"Worm Pokemon",11:"Cocoon Pokemon",12:"Butterfly Pokemon",13:"Hairy Bug Pokemon",14:"Cocoon Pokemon",
+    15:"Poison Bee Pokemon",16:"Tiny Bird Pokemon",17:"Bird Pokemon",18:"Bird Pokemon",19:"Mouse Pokemon",20:"Mouse Pokemon",21:"Tiny Bird Pokemon",
+    22:"Beak Pokemon",23:"Snake Pokemon",24:"Cobra Pokemon",25:"Mouse Pokemon",26:"Mouse Pokemon",27:"Mouse Pokemon",28:"Mouse Pokemon",
+    29:"Poison Pin Pokemon",30:"Poison Pin Pokemon",31:"Drill Pokemon",32:"Poison Pin Pokemon",33:"Poison Pin Pokemon",34:"Drill Pokemon",
+    35:"Fairy Pokemon",36:"Fairy Pokemon",37:"Fox Pokemon",38:"Fox Pokemon",39:"Balloon Pokemon",40:"Balloon Pokemon",41:"Bat Pokemon",
+    42:"Bat Pokemon",43:"Weed Pokemon",44:"Weed Pokemon",45:"Flower Pokemon",46:"Mushroom Pokemon",47:"Mushroom Pokemon",48:"Insect Pokemon",
+    49:"Poison Moth Pokemon",50:"Mole Pokemon",51:"Mole Pokemon",52:"Scratch Cat Pokemon",53:"Classy Cat Pokemon",54:"Duck Pokemon",55:"Duck Pokemon",
+    56:"Pig Monkey Pokemon",57:"Pig Monkey Pokemon",58:"Puppy Pokemon",59:"Legendary Pokemon",60:"Tadpole Pokemon",61:"Tadpole Pokemon",62:"Tadpole Pokemon",
+    63:"Psi Pokemon",64:"Psi Pokemon",65:"Psi Pokemon",66:"Superpower Pokemon",67:"Superpower Pokemon",68:"Superpower Pokemon",69:"Flower Pokemon",
+    70:"Flycatcher Pokemon",71:"Flycatcher Pokemon",72:"Jellyfish Pokemon",73:"Jellyfish Pokemon",74:"Rock Pokemon",75:"Rock Pokemon",76:"Megaton Pokemon",
+    77:"Fire Horse Pokemon",78:"Fire Horse Pokemon",79:"Dopey Pokemon",80:"Hermit Crab Pokemon",81:"Magnet Pokemon",82:"Magnet Pokemon",83:"Wild Duck Pokemon",
+    84:"Twin Bird Pokemon",85:"Triple Bird Pokemon",86:"Sea Lion Pokemon",87:"Sea Lion Pokemon",88:"Sludge Pokemon",89:"Sludge Pokemon",90:"Bivalve Pokemon",
+    91:"Bivalve Pokemon",92:"Gas Pokemon",93:"Gas Pokemon",94:"Shadow Pokemon",95:"Rock Snake Pokemon",96:"Hypnosis",97:"Hypnosis Pokemon",98:"River Crab Pokemon",
+    99:"Pincer Pokemon",100:"Ball Pokemon",101:"Ball Pokemon",102:"Egg Pokemon",103:"Coconut Pokemon",104:"Lonely Pokemon",105:"Bone Keeper Pokemon",
+    106:"Kicking Pokemon",107:"Punching Pokemon",108:"Licking Pokemon",109:"Poison Gas Pokemon",110:"Poison Gas Pokemon",111:"Spikes Pokemon",
+    112:"Drill Pokemon",113:"Egg Pokemon",114:"Vine Pokemon",115:"Parent Pokemon",116:"Dragon Pokemon",117:"Dragon Pokemon",118:"Goldfish Pokemon",
+    119:"Goldfish Pokemon",120:"Star Shape Pokemon",121:"Mysterious Pokemon",122:"Barrier Pokemon",123:"Mantis Pokemon",124:"Human Shape Pokemon"
             }
 Otherforms = { "Hisuan Growlithe":"Scout Pokemon", "Galarian Ponyta":"Unique Horn Pokemon","Galarian Rapidash":"Unique Horn Pokemon",
-              
-
+              "Hisuian Voltorb":"Sphere Pokemon","Hisuian ELectrode":"Sphere Pokemon"
             }
 result = requests.get("https://pokeapi.co/api/v2/pokemon?limit=1302")
 contents = result.json()
@@ -65,7 +56,7 @@ for i in range(1025):
     for i in range(0,len(contents["moves"])):
         pokemon[name]["moves"].append(contents["moves"][i]["move"]["name"])
 
-    if counter < 52:
+    if counter < 125:
         pokemon[name]["category"] = categories[counter]
 
     pokemon[name]["gender"] = list()

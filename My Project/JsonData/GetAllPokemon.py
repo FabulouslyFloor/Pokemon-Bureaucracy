@@ -18,10 +18,17 @@ categories = {1:"Seed Pokemon",2:"Seed Pokemon",3:"Seed Pokemon",4:"Lizard Pokem
     99:"Pincer Pokemon",100:"Ball Pokemon",101:"Ball Pokemon",102:"Egg Pokemon",103:"Coconut Pokemon",104:"Lonely Pokemon",105:"Bone Keeper Pokemon",
     106:"Kicking Pokemon",107:"Punching Pokemon",108:"Licking Pokemon",109:"Poison Gas Pokemon",110:"Poison Gas Pokemon",111:"Spikes Pokemon",
     112:"Drill Pokemon",113:"Egg Pokemon",114:"Vine Pokemon",115:"Parent Pokemon",116:"Dragon Pokemon",117:"Dragon Pokemon",118:"Goldfish Pokemon",
-    119:"Goldfish Pokemon",120:"Star Shape Pokemon",121:"Mysterious Pokemon",122:"Barrier Pokemon",123:"Mantis Pokemon",124:"Human Shape Pokemon"
+    119:"Goldfish Pokemon",120:"Star Shape Pokemon",121:"Mysterious Pokemon",122:"Barrier Pokemon",123:"Mantis Pokemon",124:"Human Shape Pokemon",
+    125:"Electric Pokemon",126:"Spitfire Pokemon",127:"Stag Beetle Pokemon",128:"Wild Bull Pokemon",129:"Fish Pokemon",130:"Atrocious Pokemon",
+    131:"Transport Pokemon",132:"Transform Pokemon",133:"Evolution Pokemon",134:"Bubble Jet Pokemon",135:"Lightning Pokemon",136:"Flame Pokemon",
+    137:"Virtual Pokemon",138:"Spiral Pokemon",139:"Spiral Pokemon",140:"Shellfish Pokemon",141:"Shellfish Pokemon",142:"Fossil Pokemon",143:"Sleeping Pokemon",
+    144:"Freeze Pokemon",145:"Electric Pokemon",146:"Flame Pokemon",147:"Dragon Pokemon",148:"Dragon Pokemon",149:"Dragon Pokemon",150:"Genetic Pokemon",151:"New Species Pokemon",
+    152:"Leaf Pokemon",153:"Leaf Pokemon",154:"Herb Pokemon",155:"Fire Mouse Pokemon",156:"Volcano Pokemon",157:"Volcano Pokemon",158:"Big Jaw Pokemon",
+    159:"Big Jaw Pokemon",160:"Big Jaw Pokemon",161:"Scout Pokemon",162:"Long Body Pokemon",163:"Owl Pokemon",164:"Owl Pokemon",165:"Five Star Pokemon",166:"Five Star Pokemon",167:"String Spit Pokemon",
+    168:"Long Leg Pokemon",169:"Bat Pokemon",170:"Angler Pokemon",171:"Light Pokemon",172:"Tiny Mouse Pokemon"
             }
 Otherforms = { "Hisuan Growlithe":"Scout Pokemon", "Galarian Ponyta":"Unique Horn Pokemon","Galarian Rapidash":"Unique Horn Pokemon",
-              "Hisuian Voltorb":"Sphere Pokemon","Hisuian ELectrode":"Sphere Pokemon"
+              "Hisuian Voltorb":"Sphere Pokemon","Hisuian ELectrode":"Sphere Pokemon","Galarian Articuno":"Cruel Pokemon","Hisuian Typhlosion":"Ghost Flame Pokemon",
             }
 result = requests.get("https://pokeapi.co/api/v2/pokemon?limit=1302")
 contents = result.json()

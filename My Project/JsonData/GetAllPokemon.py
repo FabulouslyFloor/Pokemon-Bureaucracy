@@ -2,6 +2,7 @@ import json
 import requests
 import re
 
+# Manual dictionary of all the pokemon categories
 categories = {1:"Seed Pokemon",2:"Seed Pokemon",3:"Seed Pokemon",4:"Lizard Pokemon",5:"Flame Pokemon",6:"Flame Pokemon",7:"Tiny Turtle Pokemon",
     8:"Turtle Pokemon",9:"Shellfish Pokemon",10:"Worm Pokemon",11:"Cocoon Pokemon",12:"Butterfly Pokemon",13:"Hairy Bug Pokemon",14:"Cocoon Pokemon",
     15:"Poison Bee Pokemon",16:"Tiny Bird Pokemon",17:"Bird Pokemon",18:"Bird Pokemon",19:"Mouse Pokemon",20:"Mouse Pokemon",21:"Tiny Bird Pokemon",
@@ -28,90 +29,179 @@ categories = {1:"Seed Pokemon",2:"Seed Pokemon",3:"Seed Pokemon",4:"Lizard Pokem
     159:"Big Jaw Pokemon",160:"Big Jaw Pokemon",161:"Scout Pokemon",162:"Long Body Pokemon",163:"Owl Pokemon",164:"Owl Pokemon",165:"Five Star Pokemon",166:"Five Star Pokemon",167:"String Spit Pokemon",
     168:"Long Leg Pokemon",169:"Bat Pokemon",170:"Angler Pokemon",171:"Light Pokemon",172:"Tiny Mouse Pokemon"
             }
+# Categories for alternate forms who don't have their own national dex number
 Otherforms = { "Hisuan Growlithe":"Scout Pokemon", "Galarian Ponyta":"Unique Horn Pokemon","Galarian Rapidash":"Unique Horn Pokemon",
               "Hisuian Voltorb":"Sphere Pokemon","Hisuian ELectrode":"Sphere Pokemon","Galarian Articuno":"Cruel Pokemon","Hisuian Typhlosion":"Ghost Flame Pokemon",
             }
-result = requests.get("https://pokeapi.co/api/v2/pokemon?limit=1302")
-contents = result.json()
+
+# Used to put at the end of the api calls
 control = 1
+# Used to number the entries
 counter = 1
+# Save the beginning of the call
 poke ="https://pokeapi.co/api/v2/pokemon/"
+# Set up the dictionary
 pokemon = {}
+# Loop through every entry in the API
 for i in range(1301):
+    # Checks if we have reached call 1205. Changes the number to reflect the address change in the rest of them
     if control == 1025:
         control = 10001
 
+    # These entries are for pokemon forms we don't need in game, like all the unique pikachu-in-hat's
     if (counter == 1140 or counter == 1141 or counter == 1141 or counter ==1142 or counter == 1143 or counter ==1145 or counter == 1146 or counter == 1117 or counter == 1152 or 
         counter == 1153 or counter == 1168 or counter == 1169 or counter == 1170 or counter == 1173 or counter == 1174
         or counter == 1175 or counter == 1177 or counter == 1178 or counter == 1182 or counter ==1183 or counter == 1216
         or counter == 1288 or counter == 1289 or counter == 1290 or counter == 1291 or counter == 1292 or counter == 1293 or counter == 1294 or counter == 1295
         or counter == 1104 or counter == 1105 or counter ==1106 or counter ==1107 or counter ==1108 or counter ==1109 or counter ==1118 or counter ==1119 or counter ==1120
         or counter ==1121 or counter ==1122 or counter ==1123 or counter ==1172 or counter ==1184 or counter ==1085):
+        # Moves to the next entry
         pass
+    # If it is a form we want
     else:
+        # Concatenates the full url
         fullUrl = poke+str(control)
+        # Gets the api call
         api = requests.get(fullUrl)
+        # converts it to a dictionary
         contents = api.json()
 
-        #Set Dictionary Entry For That Pokemon
+        # Set Dictionary Entry For That Pokemon
+        # Identified by national dex number (or another number if it is a different form)
         pokemon[counter] = {}
 
-        pokemon[counter]["name"] = contents["name"]
+        hyphenPresent = contents["name"].find("-")
+        if(hyphenPresent != -1):
+            box = re.compile(r"\w+\-(hisui|alola|galar|paldea|mega|gmax)\.*")
+            justDelete = box.search(contents["name"])
+            if justDelete != None:
+                splitString = contents["name"].split("-")
+                newName = splitString[0]
+                pokemon[counter]["name"] = newName
+            # nidoran♀
+            elif counter == 28:
+                splitString = contents["name"].split("-")
+                newName = splitString[0] + "♀"
+                pokemon[counter]["name"] = newName
+            # nidoran♂
+            elif counter == 31:
+                splitString = contents["name"].split("-")
+                newName = splitString[0] + "♂"
+                pokemon[counter]["name"] = newName
+            # mr. mime
+            elif counter == 121:
+                splitString = contents["name"].split("-")
+                newName = splitString[0] + ". " + splitString[1]
+                pokemon[counter]["name"] = newName
+            # mime jr.
+            elif counter == 438:
+                splitString = contents["name"].split("-")
+                newName = splitString[0] + " " + splitString[1] +"."
+                pokemon[counter]["name"] = newName
+            # type: null
+            elif counter == 771:
+                splitString = contents["name"].split("-")
+                newName = splitString[0] + ": " + splitString[1]
+                pokemon[counter]["name"] = newName
+            # mr. mime
+            elif counter == 865:
+                splitString = contents["name"].split("-")
+                newName = splitString[0] + ". " + splitString[1]
+                pokemon[counter]["name"] = newName
+            # Tapu's, Paradox Pokemon
+            elif (counter == 784 or counter == 785 or counter == 786 or counter == 787 or counter == 983 or counter == 984 or counter == 985 or 
+                counter == 986 or counter == 987 or counter == 988 or counter == 989 or counter == 990 or counter == 991 or counter == 992 or
+                counter == 993 or counter == 994 or counter == 1004 or counter == 1005 or counter == 1008 or counter == 1009 or counter == 1019
+                or counter == 1020 or counter == 1021 or counter == 1022):
+                splitString = contents["name"].split("-")
+                newName = splitString[0] + " " + splitString[1]
+                pokemon[counter]["name"] = newName
+            else:
+                pokemon[counter]["name"] = contents["name"]
+        else:
+            # Adds the name
+            pokemon[counter]["name"] = contents["name"]
 
+        # Sets up the list for the types
         pokemon[counter]["types"] = list()
     
+        # Iterates through the types
         for i in range(0,len(contents["types"])):
+            # Adds each type present
             pokemon[counter]["types"].append(contents["types"][i]["type"]["name"])
 
+        # Adds height
         pokemon[counter]["height"] = contents["height"]
 
+        # Adds weight
         pokemon[counter]["weight"] = contents["weight"]
 
+        # Sets up form list
         pokemon[counter]["forms"] = list()
 
+        # Iterates through the forms and adds all of them
         for i in range(0,len(contents["forms"])):
             pokemon[counter]["forms"].append(contents["forms"][i]["name"])
 
+        # Sets up the move list
         pokemon[counter]["moves"] = list()
 
+        # Iterates through the moves and adds all of them
         for i in range(0,len(contents["moves"])):
             pokemon[counter]["moves"].append(contents["moves"][i]["move"]["name"])
 
+        # Sets up the abilities list
         pokemon[counter]["abilities"] = list()
 
+        # Iterates through the abilities and adds them
         for i in range(0,len(contents["abilities"])):
             pokemon[counter]["abilities"] = contents["abilities"][i]["ability"]["name"]
 
+        # If statement only for while we don't have all the categories recorded
         if counter < 173:
+            # Adds the category
             pokemon[counter]["category"] = categories[counter]
 
+        # Sets up the gender list for use later
         pokemon[counter]["gender"] = list()
 
+        # Adds a shiny category for using in game later
         pokemon[counter]["shiny"] = [False,True]
 
+    # Prints counter for human to see the program is running
     print(counter)
+    # Increments 
     control = control + 1
     counter = counter + 1
 
-result = requests.get("https://pokeapi.co/api/v2/gender?limit=3")
-contents = result.json()
-counter = 1
+# Save the beginning of the call
 poke ="https://pokeapi.co/api/v2/gender/"
-for x in range(3):
-    fullUrl = poke+str(counter)
+# Iterates through all the entries in the api
+for x in range(1,4):
+    # Concotenates the full url
+    fullUrl = poke+str(x)
+    # Calls API
     api = requests.get(fullUrl)
+    # Translate into a dictionary
     contents = api.json()
+    # Iterate through all the species listed in the dictionary for that gender
     for i in range(0,len(contents["pokemon_species_details"])):
+        # Make an api call to the url listed under that species
         getDexNum = requests.get(contents["pokemon_species_details"][i]["pokemon_species"]["url"])
+        # Translate to dictionary
         dex = getDexNum.json()
+        # Pull the national dex number from it
         number = dex["pokedex_numbers"][0]["entry_number"]
+        # Use that to fill in the gender of the appropriate pokemon
         pokemon[number]["gender"].append(contents["name"])
+        # Prints the gender and the entry currently being worked on for the human
         print(str(x) + ": " + str(i))
-    control = control + 1
 
 
 
-
+# Opens or creates the pokemon.json file
 with open("pokemon.json","w") as fp:
+    # Dumps the dictionary created into the file
     json.dump(pokemon,fp,indent = 4)
+# Lets user know the file has been updated
 print("Check your folder for the file!")

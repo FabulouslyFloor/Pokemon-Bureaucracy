@@ -1,5 +1,6 @@
 import json
 import requests
+import re
 
 categories = {1:"Seed Pokemon",2:"Seed Pokemon",3:"Seed Pokemon",4:"Lizard Pokemon",5:"Flame Pokemon",6:"Flame Pokemon",7:"Tiny Turtle Pokemon",
     8:"Turtle Pokemon",9:"Shellfish Pokemon",10:"Worm Pokemon",11:"Cocoon Pokemon",12:"Butterfly Pokemon",13:"Hairy Bug Pokemon",14:"Cocoon Pokemon",

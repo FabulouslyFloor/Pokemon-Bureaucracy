@@ -32,101 +32,81 @@ Otherforms = { "Hisuan Growlithe":"Scout Pokemon", "Galarian Ponyta":"Unique Hor
             }
 result = requests.get("https://pokeapi.co/api/v2/pokemon?limit=1302")
 contents = result.json()
+control = 1
 counter = 1
 poke ="https://pokeapi.co/api/v2/pokemon/"
 pokemon = {}
-for i in range(1025):
-    fullUrl = poke+str(counter)
-    api = requests.get(fullUrl)
-    contents = api.json()
+for i in range(1301):
+    if control == 1025:
+        control = 10001
 
-    name = contents["name"]
-    #Set Dictionary Entry For That Pokemon
-    pokemon[name] = {}
+    if (counter == 1140 or counter == 1141 or counter == 1141 or counter ==1142 or counter == 1143 or counter ==1145 or counter == 1146 or counter == 1117 or counter == 1152 or 
+        counter == 1153 or counter == 1168 or counter == 1169 or counter == 1170 or counter == 1173 or counter == 1174
+        or counter == 1175 or counter == 1177 or counter == 1178 or counter == 1182 or counter ==1183 or counter == 1216
+        or counter == 1288 or counter == 1289 or counter == 1290 or counter == 1291 or counter == 1292 or counter == 1293 or counter == 1294 or counter == 1295
+        or counter == 1104 or counter == 1105 or counter ==1106 or counter ==1107 or counter ==1108 or counter ==1109 or counter ==1118 or counter ==1119 or counter ==1120
+        or counter ==1121 or counter ==1122 or counter ==1123 or counter ==1172 or counter ==1184 or counter ==1085):
+        pass
+    else:
+        fullUrl = poke+str(control)
+        api = requests.get(fullUrl)
+        contents = api.json()
 
-    pokemon[name]["types"] = list()
+        #Set Dictionary Entry For That Pokemon
+        pokemon[counter] = {}
+
+        pokemon[counter]["name"] = contents["name"]
+
+        pokemon[counter]["types"] = list()
     
-    for i in range(0,len(contents["types"])):
-        pokemon[name]["types"].append(contents["types"][i]["type"]["name"])
+        for i in range(0,len(contents["types"])):
+            pokemon[counter]["types"].append(contents["types"][i]["type"]["name"])
 
-    pokemon[name]["height"] = contents["height"]
+        pokemon[counter]["height"] = contents["height"]
 
-    pokemon[name]["weight"] = contents["weight"]
+        pokemon[counter]["weight"] = contents["weight"]
 
-    pokemon[name]["forms"] = list()
+        pokemon[counter]["forms"] = list()
 
-    for i in range(0,len(contents["forms"])):
-        pokemon[name]["forms"].append(contents["forms"][i]["name"])
+        for i in range(0,len(contents["forms"])):
+            pokemon[counter]["forms"].append(contents["forms"][i]["name"])
 
-    pokemon[name]["moves"] = list()
+        pokemon[counter]["moves"] = list()
 
-    for i in range(0,len(contents["moves"])):
-        pokemon[name]["moves"].append(contents["moves"][i]["move"]["name"])
+        for i in range(0,len(contents["moves"])):
+            pokemon[counter]["moves"].append(contents["moves"][i]["move"]["name"])
 
-    if counter < 125:
-        pokemon[name]["category"] = categories[counter]
+        pokemon[counter]["abilities"] = list()
 
-    pokemon[name]["gender"] = list()
+        for i in range(0,len(contents["abilities"])):
+            pokemon[counter]["abilities"] = contents["abilities"][i]["ability"]["name"]
 
-    pokemon[name]["shiny"] = [False,True]
+        if counter < 173:
+            pokemon[counter]["category"] = categories[counter]
+
+        pokemon[counter]["gender"] = list()
+
+        pokemon[counter]["shiny"] = [False,True]
 
     print(counter)
+    control = control + 1
     counter = counter + 1
 
-with open("pokemon.json","w") as fp:
-    json.dump(pokemon,fp,indent = 4)
-print("Check your folder for the file!")
-
-'''
 result = requests.get("https://pokeapi.co/api/v2/gender?limit=3")
 contents = result.json()
 counter = 1
 poke ="https://pokeapi.co/api/v2/gender/"
-for i in range(3):
+for x in range(3):
     fullUrl = poke+str(counter)
     api = requests.get(fullUrl)
     contents = api.json()
     for i in range(0,len(contents["pokemon_species_details"])):
-        if i == 221:
-            pokemon["basculin-red-striped"]["gender"].append(contents["name"])
-        elif i == 289:
-            pokemon["pumpkaboo-average"]["gender"].append(contents["name"])
-        elif i == 299:
-            pokemon["oricorio-baile"]["gender"].append(contents["name"])
-        elif i == 302:
-            pokemon["wishiwashi-solo"]["gender"].append(contents["name"])    
-        elif i == 320:
-            pokemon["mimikyu-disguised"]["gender"].append(contents["name"]) 
-        elif i == 349:
-            pokemon["eiscue-ice"]["gender"].append(contents["name"]) 
-        elif i == 350:
-            pokemon["indeedee-male"]["gender"].append(contents["name"]) 
-        elif i == 351:
-            pokemon["morpeko-full-belly"]["gender"].append(contents["name"]) 
-        elif i == 356:
-            pokemon["enamorus-incarnate"]["gender"].append(contents["name"])   
-        elif i == 586:
-            pokemon["wormadam-plant"]["gender"].append(contents["name"]) 
-            pokemon["wormadam-sandy"]["gender"].append(contents["name"])
-            pokemon["wormadam-trash"]["gender"].append(contents["name"])  
-        elif i == 654:
-            pokemon["darmanitan-standard"]["gender"].append(contents["name"])
-        elif i == 707:
-            pokemon["meowstic-male"]["gender"].append(contents["name"])
-        elif i == 723:
-            pokemon["gourgeist-average"]["gender"].append(contents["name"])
-        elif i == 739:
-            pokemon["lycanroc-midday"]["gender"].append(contents["name"])
-        elif i == 775:
-            pokemon["toxtricity-amped"]["gender"].append(contents["name"])
-        elif i == 791:
-            pokemon["urshifu-single-strike"]["gender"].append(contents["name"])
-        elif i == 795:
-            pokemon["basculegion-male"]["gender"].append(contents["name"])
-        else:
-            pokemon[contents["pokemon_species_details"][i]["pokemon_species"]["name"]]["gender"].append(contents["name"])
-
-    counter = counter + 1
+        getDexNum = requests.get(contents["pokemon_species_details"][i]["pokemon_species"]["url"])
+        dex = getDexNum.json()
+        number = dex["pokedex_numbers"][0]["entry_number"]
+        pokemon[number]["gender"].append(contents["name"])
+        print(str(x) + ": " + str(i))
+    control = control + 1
 
 
 
@@ -134,4 +114,3 @@ for i in range(3):
 with open("pokemon.json","w") as fp:
     json.dump(pokemon,fp,indent = 4)
 print("Check your folder for the file!")
-'''

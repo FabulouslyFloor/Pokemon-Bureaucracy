@@ -79,40 +79,40 @@ for i in range(1301):
                 newName = splitString[0]
                 pokemon[counter]["name"] = newName
             # nidoran♀
-            elif counter == 28:
+            elif counter == 29:
                 splitString = contents["name"].split("-")
                 newName = splitString[0] + "♀"
                 pokemon[counter]["name"] = newName
             # nidoran♂
-            elif counter == 31:
+            elif counter == 32:
                 splitString = contents["name"].split("-")
                 newName = splitString[0] + "♂"
                 pokemon[counter]["name"] = newName
             # mr. mime
-            elif counter == 121:
+            elif counter == 122:
                 splitString = contents["name"].split("-")
                 newName = splitString[0] + ". " + splitString[1]
                 pokemon[counter]["name"] = newName
             # mime jr.
-            elif counter == 438:
+            elif counter == 439:
                 splitString = contents["name"].split("-")
                 newName = splitString[0] + " " + splitString[1] +"."
                 pokemon[counter]["name"] = newName
             # type: null
-            elif counter == 771:
+            elif counter == 772:
                 splitString = contents["name"].split("-")
                 newName = splitString[0] + ": " + splitString[1]
                 pokemon[counter]["name"] = newName
-            # mr. mime
-            elif counter == 865:
+            # mr. rime
+            elif counter == 866:
                 splitString = contents["name"].split("-")
                 newName = splitString[0] + ". " + splitString[1]
                 pokemon[counter]["name"] = newName
             # Tapu's, Paradox Pokemon
-            elif (counter == 784 or counter == 785 or counter == 786 or counter == 787 or counter == 983 or counter == 984 or counter == 985 or 
+            elif (counter == 785 or counter == 786 or counter == 787 or counter == 788 or counter == 984 or counter == 985 or 
                 counter == 986 or counter == 987 or counter == 988 or counter == 989 or counter == 990 or counter == 991 or counter == 992 or
-                counter == 993 or counter == 994 or counter == 1004 or counter == 1005 or counter == 1008 or counter == 1009 or counter == 1019
-                or counter == 1020 or counter == 1021 or counter == 1022):
+                counter == 993 or counter == 994 or counter == 995 or counter == 1005 or counter == 1006 or counter == 1009 or counter == 1010 
+                or counter == 1020 or counter == 1021 or counter == 1022 or counter == 1023):
                 splitString = contents["name"].split("-")
                 newName = splitString[0] + " " + splitString[1]
                 pokemon[counter]["name"] = newName

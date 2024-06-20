@@ -2878,7 +2878,7 @@
         ]
     },
     "29": {
-        "name": "nidoran-f",
+        "name": "nidoran\u2640",
         "types": [
             "poison"
         ],
@@ -3233,7 +3233,7 @@
         ]
     },
     "32": {
-        "name": "nidoran-m",
+        "name": "nidoran\u2642",
         "types": [
             "poison"
         ],
@@ -13972,7 +13972,7 @@
         ]
     },
     "122": {
-        "name": "mr-mime",
+        "name": "mr. mime",
         "types": [
             "psychic",
             "fairy"
@@ -48884,7 +48884,7 @@
         ]
     },
     "439": {
-        "name": "mime-jr",
+        "name": "mime jr.",
         "types": [
             "psychic",
             "fairy"
@@ -81787,7 +81787,7 @@
         ]
     },
     "772": {
-        "name": "type-null",
+        "name": "type: null",
         "types": [
             "normal"
         ],
@@ -82992,7 +82992,7 @@
         ]
     },
     "784": {
-        "name": "kommo o",
+        "name": "kommo-o",
         "types": [
             "dragon",
             "fighting"
@@ -83414,7 +83414,7 @@
         ]
     },
     "788": {
-        "name": "tapu-fini",
+        "name": "tapu fini",
         "types": [
             "water",
             "fairy"
@@ -89369,7 +89369,7 @@
         ]
     },
     "866": {
-        "name": "mr-rime",
+        "name": "mr. rime",
         "types": [
             "ice",
             "psychic"
@@ -99026,7 +99026,7 @@
         ]
     },
     "995": {
-        "name": "iron-thorns",
+        "name": "iron thorns",
         "types": [
             "rock",
             "electric"
@@ -99631,7 +99631,7 @@
         ]
     },
     "1004": {
-        "name": "chi yu",
+        "name": "chi-yu",
         "types": [
             "dark",
             "fire"
@@ -99789,7 +99789,7 @@
         ]
     },
     "1006": {
-        "name": "iron-valiant",
+        "name": "iron valiant",
         "types": [
             "fairy",
             "fighting"
@@ -100137,7 +100137,7 @@
         ]
     },
     "1010": {
-        "name": "iron-leaves",
+        "name": "iron leaves",
         "types": [
             "grass",
             "psychic"
@@ -101135,7 +101135,7 @@
         ]
     },
     "1023": {
-        "name": "iron-crown",
+        "name": "iron crown",
         "types": [
             "steel",
             "psychic"

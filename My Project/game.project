@@ -13,4 +13,5 @@ input_method = HiddenInputField
 
 [project]
 title = Pokemon Bureaucracy
+custom_resources = res/
 

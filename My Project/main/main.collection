@@ -1,10 +1,10 @@
 name: "main"
 instances {
-  id: "Draggable Test"
-  prototype: "/main/Draggable Test.go"
+  id: "Text Test"
+  prototype: "/main/Text Test.go"
   position {
-    x: 0.0
-    y: 0.0
+    x: 500.0
+    y: 500.0
     z: 0.0
   }
   rotation {

@@ -1,10 +1,32 @@
+local jsonTable
+
+local function newMons()
+	local chosenPokemon = math.random(50)
+	label.set_text("#pokemon1Name", jsonTable[tostring(chosenPokemon)]["name"])
+	
+	local img = tostring(chosenPokemon) .. "-1"
+	msg.post("#pokemon1","play_animation", {id = hash(img)})
+	--if chosenPokemon <= 50 then
+		--go.set("#pokemon1","image",resource.atlas("Art/PokemonSprites.atlas"))
+	--elseif chosenPokemon > 50 then
+		--go.set("#pokemon1","image",resource.atlas("Art/PokemonSprites2.atlas"))
+	--end
+	
+	local chosenPokemon2 = math.random(50)
+	while chosenPokemon == chosenPokemon2 do
+		chosenPokemon2 = math.random(100)
+	end
+	label.set_text("#pokemon2Name", jsonTable[tostring(chosenPokemon2)]["name"])
+	img = tostring(chosenPokemon2) .. "-1"
+	msg.post("#pokemon2","play_animation", {id = hash(img)})
+end
+
 function init(self)
 	math.randomseed(os.clock() * 100000000000)
 	local test_json_file = sys.load_resource("/res/json/pokemon.json")
-	local test_json_table = json.decode(test_json_file)
-	
-	local chosenPokemon = math.random(1301)
-	label.set_text("#label", test_json_table[tostring(chosenPokemon)]["name"])
+	jsonTable = json.decode(test_json_file)
+
+	newMons()
 end
 
 function final(self)

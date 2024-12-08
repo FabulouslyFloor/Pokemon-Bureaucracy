@@ -15,3 +15,6 @@ input_method = HiddenInputField
 title = Pokemon Bureaucracy
 custom_resources = res/
 
+[input]
+game_binding = /builtins/input/all.input_bindingc
+

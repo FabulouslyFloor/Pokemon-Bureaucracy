@@ -1,0 +1,4 @@
+font: "/Fonts/ttf Files/Como Regular.ttf"
+material: "/builtins/fonts/font.material"
+size: 20
+characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"

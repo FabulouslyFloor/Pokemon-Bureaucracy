@@ -1,0 +1,18 @@
+name: "main"
+instances {
+  id: "Text Test"
+  prototype: "/Test Objects/Text Test.go"
+  position {
+    x: 500.0
+    y: 100.0
+  }
+}
+instances {
+  id: "Cursor"
+  prototype: "/Objects/Cursor.go"
+  position {
+    x: 500.0
+    y: 500.0
+  }
+}
+scale_along_z: 0

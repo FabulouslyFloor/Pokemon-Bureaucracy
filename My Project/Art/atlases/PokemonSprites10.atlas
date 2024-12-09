@@ -1,0 +1,421 @@
+images {
+  image: "/Art/Pokemon Assets/451-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/451-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/452-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/452-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/453-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/453-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/453F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/453F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/454-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/454-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/454F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/454F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/455-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/455-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/456-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/456-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/456F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/456F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/457-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/457-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/457F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/457F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/458-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/458-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/459-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/459-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/459F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/459F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/460-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/460-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/460F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/460F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/460M-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/460M-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/461-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/461-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/461F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/461F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/462-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/462-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/463-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/463-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/464-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/464-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/464F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/464F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/465-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/465-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/465F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/465F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/466-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/466-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/467-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/467-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/468-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/468-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/469-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/469-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/470-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/470-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/471-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/471-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/472-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/472-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/473-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/473-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/473F-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/473F-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/474-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/474-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/475-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/475-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/475M-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/475M-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/476-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/476-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/477-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/477-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/478-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/478-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F1-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F1-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F2-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F2-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F3-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F3-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F4-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F4-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F5-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/479F5-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/480-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/480-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/481-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/481-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/482-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/482-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/483-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/483-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/483O-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/483O-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/484-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/484-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/484O-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/484O-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/485-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/485-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/486-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/486-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/487-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/487-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/487O-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/487O-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/488-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/488-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/489-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/489-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/490-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/490-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/491-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/491-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/492-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/492-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/492S-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/492S-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/494-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/494-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/495-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/495-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/496-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/496-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/497-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/497-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/498-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/498-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/499-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/499-2.png"
+}
+images {
+  image: "/Art/Pokemon Assets/500-1.png"
+}
+images {
+  image: "/Art/Pokemon Assets/500-2.png"
+}
+extrude_borders: 2

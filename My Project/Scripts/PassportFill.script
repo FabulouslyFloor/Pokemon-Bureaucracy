@@ -1,0 +1,157 @@
+------------------------------------------------------------------------------------------------------- 
+-- This script fills a TestPokemonPassport object with information from the JSON file
+-- It communicates the spawned child sprite to cursor.script
+-- 
+-------------------------------------------------------------------------------------------------------
+-- Set up local variables
+-- Variable to save the ID of spawned objects 
+local id
+
+-- Custom function which generates a new pokemon and gets all of it's information from the JSON file
+local function newMon()
+	-- Generates a random number from 1 to 1025
+	local chosenPokemon = math.random(1025)
+	-- ** For Testing Purposes
+	print(chosenPokemon)
+	-- Sets Name Label
+	label.set_text("#Name", jsonTable[tostring(chosenPokemon)]["name"])
+	-- Sets Type 1 Label
+	label.set_text("#Type1", jsonTable[tostring(chosenPokemon)]["types"][1])
+	-- Sets Type 2 Label
+	-- Checks if the Pokemon has a second type
+	if (jsonTable[tostring(chosenPokemon)]["types"][2]) == nil then
+		-- Sets "none" if no second type
+		label.set_text("#Type2", "None")
+	else
+		-- If there is a second type, sets the label to it
+		label.set_text("#Type2", jsonTable[tostring(chosenPokemon)]["types"][2])
+	end
+	-- Sets Height Label
+	label.set_text("#Height", jsonTable[tostring(chosenPokemon)]["height"])
+	-- Sets Weight Label 
+	label.set_text("#Weight", jsonTable[tostring(chosenPokemon)]["weight"])
+	-- Sets Ability Label
+	label.set_text("#Ability", jsonTable[tostring(chosenPokemon)]["abilities"])
+	-- Sets Gender Label
+	label.set_text("#Gender", jsonTable[tostring(chosenPokemon)]["gender"][1])
+	-- Sets Moves Label
+	label.set_text("#Move1", jsonTable[tostring(chosenPokemon)]["moves"][1])
+	label.set_text("#Move2", jsonTable[tostring(chosenPokemon)]["moves"][2])
+
+	-- Concatenates the name of (most) pokemons images
+	local img = tostring(chosenPokemon) .. "-1"
+
+	-- Get's the position of the TestPokemonPassport object
+	position = go.get_position()
+	-- Determines which factory contains the sprite, spawns an instance at the relative position
+	-- and saves it's ID
+	if chosenPokemon <= 50 then
+		id = factory.create("#PokemonSprite1",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 50 and chosenPokemon <=100 then
+		id = factory.create("#PokemonSprite2",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 100 and chosenPokemon <=150 then
+		id = factory.create("#PokemonSprite3",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 150 and chosenPokemon <=200 then
+		id = factory.create("#PokemonSprite4",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 200 and chosenPokemon <=250 then
+		id = factory.create("#PokemonSprite5",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 250 and chosenPokemon <=300 then
+		id = factory.create("#PokemonSprite6",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 300 and chosenPokemon <=350 then
+		id = factory.create("#PokemonSprite7",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 350 and chosenPokemon <=400 then
+		id = factory.create("#PokemonSprite8",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 400 and chosenPokemon <=450 then
+		id = factory.create("#PokemonSprite9",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 450 and chosenPokemon <=500 then
+		id = factory.create("#PokemonSprite10",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 500 and chosenPokemon <=550 then
+		id = factory.create("#PokemonSprite11",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 550 and chosenPokemon <=600 then
+		id = factory.create("#PokemonSprite12",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 600 and chosenPokemon <=650 then
+		id = factory.create("#PokemonSprite13",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 650 and chosenPokemon <=700 then
+		id = factory.create("#PokemonSprite14",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 700 and chosenPokemon <=750 then
+		id = factory.create("#PokemonSprite15",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 750 and chosenPokemon <=800 then
+		id = factory.create("#PokemonSprite16",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 800 and chosenPokemon <=850 then
+		id = factory.create("#PokemonSprite17",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 850 and chosenPokemon <=900 then
+		id = factory.create("#PokemonSprite18",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 900 and chosenPokemon <=950 then
+		id = factory.create("#PokemonSprite19",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 950 and chosenPokemon <=1000 then
+		id = factory.create("#PokemonSprite20",vmath.vector3(position.x-138,position.y+68,1))
+	elseif chosenPokemon > 1000 and chosenPokemon <=1050 then
+		id = factory.create("#PokemonSprite21",vmath.vector3(position.x-138,position.y+68,1))
+	end
+	-- Sends a message to the spawned instance to display the correct sprite
+	msg.post(id,"play_animation", {id = hash(img)})
+end
+
+-- When the Passport object is first spawned
+function init(self)
+	-- Get input focus **For testing purposes
+	msg.post(".", "acquire_input_focus")
+
+	-- Seed random
+	math.randomseed(os.clock() * 100000000000)
+	-- Load the JSON file
+	local test_json_file = sys.load_resource("/res/json/pokemon.json")
+	-- Decode the JSON file and save to a variable for use
+	jsonTable = json.decode(test_json_file)
+
+	-- Calls newMon to fill the information of a random pokemon
+	newMon()
+end
+
+-- When input is recieved
+function on_input(self, action_id, action)
+	-- **Testing
+	-- When space is pressed
+	if action_id == hash("space") then
+		-- Delete the old picture
+		go.delete(id)
+		-- Call newMon to fill in a new pokemons information
+		newMon()
+	end
+end
+
+-- When a message is recieved
+function on_message(self, message_id, message, sender)
+	-- When a collision happens
+	if message_id == hash("collision_response") then
+		-- Send cursor.script a message with the ID of the child
+		msg.post("/Cursor#cursor", "child", {child_id = id})
+	end
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

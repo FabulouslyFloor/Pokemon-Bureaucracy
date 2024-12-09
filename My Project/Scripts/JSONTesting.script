@@ -1,0 +1,194 @@
+------------------------------------------------------------------------------------------ 
+-- ***Testing Script***
+-- This script was written to figure out how to access the JSON file and information stored 
+-- inside, as well as display them dynamically and interact with the pictures 
+-- It is only tied to the JSONTest collection
+------------------------------------------------------------------------------------------
+-- Create a variable to hold the JSONtable
+local jsonTable
+-- Create a dictionary to keep track of the spawned sprites 
+local spawnedSprites = {}
+
+-- Custom Function to select a random pokemon and display it's name and photo
+local function newMons()
+	-- Selects a random number between 1 and 1025
+	local chosenPokemon = math.random(1025)
+	-- Prints the number for debugging purposes
+	print(chosenPokemon)
+	-- Sets the first label to the name of the pokemon 
+	label.set_text("#pokemon1Name", jsonTable[tostring(chosenPokemon)]["name"])
+
+	-- Conncatinates a string to match the name of (most) of the pictures
+	local img = tostring(chosenPokemon) .. "-1"
+	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
+	if chosenPokemon <= 50 then
+		id = factory.create("#PokemonSprite1",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 50 and chosenPokemon <=100 then
+		id = factory.create("#PokemonSprite2",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 100 and chosenPokemon <=150 then
+		id = factory.create("#PokemonSprite3",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 150 and chosenPokemon <=200 then
+		id = factory.create("#PokemonSprite4",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 200 and chosenPokemon <=250 then
+		id = factory.create("#PokemonSprite5",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 250 and chosenPokemon <=300 then
+		id = factory.create("#PokemonSprite6",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 300 and chosenPokemon <=350 then
+		id = factory.create("#PokemonSprite7",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 350 and chosenPokemon <=400 then
+		id = factory.create("#PokemonSprite8",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 400 and chosenPokemon <=450 then
+		id = factory.create("#PokemonSprite9",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 450 and chosenPokemon <=500 then
+		id = factory.create("#PokemonSprite10",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 500 and chosenPokemon <=550 then
+		id = factory.create("#PokemonSprite11",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 550 and chosenPokemon <=600 then
+		id = factory.create("#PokemonSprite12",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 600 and chosenPokemon <=650 then
+		id = factory.create("#PokemonSprite13",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 650 and chosenPokemon <=700 then
+		id = factory.create("#PokemonSprite14",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 700 and chosenPokemon <=750 then
+		id = factory.create("#PokemonSprite15",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 750 and chosenPokemon <=800 then
+		id = factory.create("#PokemonSprite16",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 800 and chosenPokemon <=850 then
+		id = factory.create("#PokemonSprite17",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 850 and chosenPokemon <=900 then
+		id = factory.create("#PokemonSprite18",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 900 and chosenPokemon <=950 then
+		id = factory.create("#PokemonSprite19",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 950 and chosenPokemon <=1000 then
+		id = factory.create("#PokemonSprite20",vmath.vector3(250,300,0))
+	elseif chosenPokemon > 1000 and chosenPokemon <=1050 then
+		id = factory.create("#PokemonSprite21",vmath.vector3(250,300,0))
+	end
+	-- Inserts the ID in the table
+	table.insert(spawnedSprites, id)
+	-- Sends a message to the spawned instance to display the correct image 
+	msg.post(id,"play_animation", {id = hash(img)})
+
+	-- Selects a random number between 1 and 1025
+	local chosenPokemon2 = math.random(1025)
+	-- Rerolls if the same number is chosen as the first pokemon
+	while chosenPokemon == chosenPokemon2 do
+		chosenPokemon2 = math.random(1025)
+	end
+	-- Prints for debugging purposes 
+	print(chosenPokemon2)
+	-- Sets the second label to the name of the pokemon 
+	label.set_text("#pokemon2Name", jsonTable[tostring(chosenPokemon2)]["name"])
+	-- Conncatinates a string to match the name of (most) of the pictures
+	img = tostring(chosenPokemon2) .. "-1"
+	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
+	if chosenPokemon2 <= 50 then
+		id = factory.create("#PokemonSprite1",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 50 and chosenPokemon2 <=100 then
+		id = factory.create("#PokemonSprite2",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 100 and chosenPokemon2 <=150 then
+		id = factory.create("#PokemonSprite3",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 150 and chosenPokemon2 <=200 then
+		id = factory.create("#PokemonSprite4",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 200 and chosenPokemon2 <=250 then
+		id = factory.create("#PokemonSprite5",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 250 and chosenPokemon2 <=300 then
+		id = factory.create("#PokemonSprite6",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 300 and chosenPokemon2 <=350 then
+		id = factory.create("#PokemonSprite7",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 350 and chosenPokemon2 <=400 then
+		id = factory.create("#PokemonSprite8",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 400 and chosenPokemon2 <=450 then
+		id = factory.create("#PokemonSprite9",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 450 and chosenPokemon2 <=500 then
+		id = factory.create("#PokemonSprite10",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 500 and chosenPokemon2 <=550 then
+		id = factory.create("#PokemonSprite11",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 550 and chosenPokemon2 <=600 then
+		id = factory.create("#PokemonSprite12",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 600 and chosenPokemon2 <=650 then
+		id = factory.create("#PokemonSprite13",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 650 and chosenPokemon2 <=700 then
+		id = factory.create("#PokemonSprite14",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 700 and chosenPokemon2 <=750 then
+		id = factory.create("#PokemonSprite15",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 750 and chosenPokemon2 <=800 then
+		id = factory.create("#PokemonSprite16",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 800 and chosenPokemon2 <=850 then
+		id = factory.create("#PokemonSprite17",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 850 and chosenPokemon2 <=900 then
+		id = factory.create("#PokemonSprite18",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 900 and chosenPokemon2 <=950 then
+		id = factory.create("#PokemonSprite19",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 950 and chosenPokemon2 <=1000 then
+		id = factory.create("#PokemonSprite20",vmath.vector3(750,300,0))
+	elseif chosenPokemon2 > 1000 and chosenPokemon2 <=1050 then
+		id = factory.create("#PokemonSprite21",vmath.vector3(750,300,0))
+	end
+	-- Inserts the ID in the table
+	table.insert(spawnedSprites, id)
+	-- Sends a message to the spawned instance to display the correct image 
+	msg.post(id,"play_animation", {id = hash(img)})
+end
+
+-- When the collection loads
+function init(self)
+	-- Get inputs
+	msg.post(".", "acquire_input_focus")
+	-- Seed random
+	math.randomseed(os.clock() * 100000000000)
+	-- Load the JSON file
+	local test_json_file = sys.load_resource("/res/json/pokemon.json")
+	-- Decode the JSON file and save to a variable for use
+	jsonTable = json.decode(test_json_file)
+
+	-- Call newMons() to display a pair of pokemon
+	newMons()
+end
+
+-- When input is recieved
+function on_input(self, action_id, action)
+	-- When left click happens
+	if action_id == hash("touch") then
+		-- While pressed
+		if action.pressed then
+			-- Delete old sprites spawned
+			go.delete(spawnedSprites)
+			-- Call newMons to display 2 new pokemon
+			newMons()
+		end
+	end
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

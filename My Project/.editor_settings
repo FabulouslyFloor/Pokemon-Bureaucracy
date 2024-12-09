@@ -7,14 +7,6 @@
   :workflow {
     :recent-files [
       [
-        "/main/PokemonSprites/Sprites8.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites9.go"
-        :scene
-      ]
-      [
         "/main/PokemonSprites/Sprites10.go"
         :scene
       ]
@@ -87,10 +79,6 @@
         :code
       ]
       [
-        "/main/Text Test.go"
-        :scene
-      ]
-      [
         "/Scripts/DragSpawningScript.script"
         :code
       ]
@@ -107,10 +95,6 @@
         :code
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
         "/Scripts/replace_mouse_cursor.script"
         :code
       ]
@@ -123,15 +107,31 @@
         :code
       ]
       [
-        "/main/DraggingTest.collection"
-        :scene
-      ]
-      [
         "/Test Images/Testing.atlas"
         :scene
       ]
       [
         "/main/Draggable Test.go"
+        :scene
+      ]
+      [
+        "/main/Text Test.go"
+        :scene
+      ]
+      [
+        "/main/DraggingTest.collection"
+        :scene
+      ]
+      [
+        "/Test Collections/main.collection"
+        :scene
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Test Objects/TestPokemonPassport.go"
         :scene
       ]
     ]

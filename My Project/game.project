@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /main/DraggingTest.collectionc
 
 [script]
 shared_state = 1
@@ -14,7 +14,8 @@ input_method = HiddenInputField
 [project]
 title = Pokemon Bureaucracy
 custom_resources = res/
+dependencies#0 = https://github.com/subsoap/defos/archive/refs/tags/v2.8.0.zip
 
-[input]
-game_binding = /builtins/input/all.input_bindingc
+[library]
+include_dirs = 
 

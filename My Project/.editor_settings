@@ -7,54 +7,6 @@
   :workflow {
     :recent-files [
       [
-        "/Art/atlases/PokemonSprites19.atlas"
-        :scene
-      ]
-      [
-        "/Art/atlases/PokemonSprites20.atlas"
-        :scene
-      ]
-      [
-        "/Art/atlases/PokemonSprites21.atlas"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites1.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites2.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/5.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites3.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites4.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites5.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites6.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites7.go"
-        :scene
-      ]
-      [
         "/main/PokemonSprites/Sprites8.go"
         :scene
       ]
@@ -111,10 +63,6 @@
         :scene
       ]
       [
-        "/main/Text Test.go"
-        :scene
-      ]
-      [
         "/main/Click.script"
         :code
       ]
@@ -123,16 +71,68 @@
         :cljfx-form-view
       ]
       [
+        "/main/TestDragingScript.script"
+        :code
+      ]
+      [
+        "/main/JSONTesting.script"
+        :code
+      ]
+      [
         "/main/main.collection"
         :scene
+      ]
+      [
+        "/main/cursor.lua"
+        :code
+      ]
+      [
+        "/main/Text Test.go"
+        :scene
+      ]
+      [
+        "/Scripts/DragSpawningScript.script"
+        :code
+      ]
+      [
+        "/input/game.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/Scripts/JSONTesting.script"
+        :code
+      ]
+      [
+        "/main/cursor.script"
+        :code
       ]
       [
         "/game.project"
         :cljfx-form-view
       ]
       [
-        "/main/JSONTesting.script"
+        "/Scripts/replace_mouse_cursor.script"
         :code
+      ]
+      [
+        "/main/Cursor.go"
+        :scene
+      ]
+      [
+        "/Scripts/cursor.script"
+        :code
+      ]
+      [
+        "/main/DraggingTest.collection"
+        :scene
+      ]
+      [
+        "/Test Images/Testing.atlas"
+        :scene
+      ]
+      [
+        "/main/Draggable Test.go"
+        :scene
       ]
     ]
   }

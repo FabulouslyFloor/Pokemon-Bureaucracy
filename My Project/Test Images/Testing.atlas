@@ -1,10 +1,10 @@
 images {
-  image: "/Test Images/Screenshot 2024-06-15 185741.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  image: "/Test Images/simple-hand-cursor-free-png.png"
 }
-margin: 0
+images {
+  image: "/Test Images/cartoon-wooden-table-background-planks-vector-21302648.jpg"
+}
+images {
+  image: "/Test Images/WeirdServerPrideLogo.png"
+}
 extrude_borders: 2
-inner_padding: 0
-max_page_width: 0
-max_page_height: 0
-rename_patterns: ""

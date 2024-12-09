@@ -1,6 +1,12 @@
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
+	local pos = vmath.vector3(450,450,0)
+
+	factory.create("#factory", pos)	
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
 	-- Remove this function if not needed
 end
 
@@ -22,12 +28,6 @@ function fixed_update(self, dt)
 	-- Physics section of game.project
 	-- Add update code here
 	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
 	-- Remove this function if not needed
 end
 

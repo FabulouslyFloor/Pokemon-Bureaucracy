@@ -1,6 +1,6 @@
 components {
   id: "JSONTesting"
-  component: "/main/JSONTesting.script"
+  component: "/Scripts/JSONTesting.script"
 }
 embedded_components {
   id: "pokemon1Name"

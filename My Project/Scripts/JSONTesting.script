@@ -112,6 +112,7 @@ function init(self)
 	math.randomseed(os.clock() * 100000000000)
 	local test_json_file = sys.load_resource("/res/json/pokemon.json")
 	jsonTable = json.decode(test_json_file)
+	print(jsonTable[tostring(63)]["types"][0])
 
 	newMons()
 end

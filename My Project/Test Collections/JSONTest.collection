@@ -1,7 +1,7 @@
 name: "main"
 instances {
   id: "Text Test"
-  prototype: "/main/Text Test.go"
+  prototype: "/Test Objects/Text Test.go"
   position {
     x: 500.0
     y: 100.0
@@ -9,7 +9,7 @@ instances {
 }
 instances {
   id: "Cursor"
-  prototype: "/main/Cursor.go"
+  prototype: "/Objects/Cursor.go"
   position {
     x: 500.0
     y: 500.0

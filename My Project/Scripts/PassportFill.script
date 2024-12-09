@@ -1,0 +1,125 @@
+local spawnedSprites = {}
+
+
+local function newMon()
+	local chosenPokemon = math.random(1025)
+	print(chosenPokemon)
+	-- Name
+	label.set_text("#Name", jsonTable[tostring(chosenPokemon)]["name"])
+	-- Type 1
+	label.set_text("#Type1", jsonTable[tostring(chosenPokemon)]["types"][1])
+	-- Type 2
+	if (jsonTable[tostring(chosenPokemon)]["types"][2]) == nil then
+		label.set_text("#Type2", "None")
+	else
+		label.set_text("#Type2", jsonTable[tostring(chosenPokemon)]["types"][2])
+	end
+	-- Height
+	label.set_text("#Height", jsonTable[tostring(chosenPokemon)]["height"])
+	-- Weight
+	label.set_text("#Weight", jsonTable[tostring(chosenPokemon)]["weight"])
+	-- Ability
+	label.set_text("#Ability", jsonTable[tostring(chosenPokemon)]["abilities"])
+	-- Gender
+	label.set_text("#Gender", jsonTable[tostring(chosenPokemon)]["gender"][1])
+	-- Moves
+	label.set_text("#Move1", jsonTable[tostring(chosenPokemon)]["moves"][1])
+	label.set_text("#Move2", jsonTable[tostring(chosenPokemon)]["moves"][2])
+
+	local img = tostring(chosenPokemon) .. "-1"
+	if chosenPokemon <= 50 then
+		id = factory.create("#PokemonSprite1",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 50 and chosenPokemon <=100 then
+		id = factory.create("#PokemonSprite2",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 100 and chosenPokemon <=150 then
+		id = factory.create("#PokemonSprite3",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 150 and chosenPokemon <=200 then
+		id = factory.create("#PokemonSprite4",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 200 and chosenPokemon <=250 then
+		id = factory.create("#PokemonSprite5",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 250 and chosenPokemon <=300 then
+		id = factory.create("#PokemonSprite6",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 300 and chosenPokemon <=350 then
+		id = factory.create("#PokemonSprite7",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 350 and chosenPokemon <=400 then
+		id = factory.create("#PokemonSprite8",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 400 and chosenPokemon <=450 then
+		id = factory.create("#PokemonSprite9",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 450 and chosenPokemon <=500 then
+		id = factory.create("#PokemonSprite10",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 500 and chosenPokemon <=550 then
+		id = factory.create("#PokemonSprite11",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 550 and chosenPokemon <=600 then
+		id = factory.create("#PokemonSprite12",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 600 and chosenPokemon <=650 then
+		id = factory.create("#PokemonSprite13",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 650 and chosenPokemon <=700 then
+		id = factory.create("#PokemonSprite14",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 700 and chosenPokemon <=750 then
+		id = factory.create("#PokemonSprite15",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 750 and chosenPokemon <=800 then
+		id = factory.create("#PokemonSprite16",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 800 and chosenPokemon <=850 then
+		id = factory.create("#PokemonSprite17",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 850 and chosenPokemon <=900 then
+		id = factory.create("#PokemonSprite18",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 900 and chosenPokemon <=950 then
+		id = factory.create("#PokemonSprite19",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 950 and chosenPokemon <=1000 then
+		id = factory.create("#PokemonSprite20",vmath.vector3(-138,68,1))
+	elseif chosenPokemon > 1000 and chosenPokemon <=1050 then
+		id = factory.create("#PokemonSprite21",vmath.vector3(-138,68,1))
+	end
+	table.insert(spawnedSprites, id)
+	msg.post(id,"play_animation", {id = hash(img)})
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	math.randomseed(os.clock() * 100000000000)
+	local test_json_file = sys.load_resource("/res/json/pokemon.json")
+	jsonTable = json.decode(test_json_file)
+
+	newMon()
+end
+
+function on_input(self, action_id, action)
+	-- Debugging
+	if action_id == hash("space") then
+		go.delete(spawnedSprites)
+		newMon()
+	end
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

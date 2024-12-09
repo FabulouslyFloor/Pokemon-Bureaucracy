@@ -1,35 +1,11 @@
 {
   :code {
     :find {
-      :term ""
+      :term "arcto"
     }
   }
   :workflow {
     :recent-files [
-      [
-        "/main/PokemonSprites/Sprites20.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites21.go"
-        :scene
-      ]
-      [
-        "/main/PokemonSprites/Sprites14.go"
-        :scene
-      ]
-      [
-        "/main/Click.script"
-        :code
-      ]
-      [
-        "/builtins/input/all.input_binding"
-        :cljfx-form-view
-      ]
-      [
-        "/main/TestDragingScript.script"
-        :code
-      ]
       [
         "/main/JSONTesting.script"
         :code
@@ -47,14 +23,6 @@
         :code
       ]
       [
-        "/input/game.input_binding"
-        :cljfx-form-view
-      ]
-      [
-        "/Scripts/JSONTesting.script"
-        :code
-      ]
-      [
         "/main/cursor.script"
         :code
       ]
@@ -64,14 +32,6 @@
       ]
       [
         "/main/Cursor.go"
-        :scene
-      ]
-      [
-        "/Scripts/cursor.script"
-        :code
-      ]
-      [
-        "/Test Images/Testing.atlas"
         :scene
       ]
       [
@@ -91,14 +51,6 @@
         :scene
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
-        "/Fonts/PokemonBody.font"
-        :scene
-      ]
-      [
         "/Fonts/Como Typeface/PokemonBodyMedium.font"
         :scene
       ]
@@ -115,10 +67,6 @@
         :scene
       ]
       [
-        "/Fonts/PokemonBodyHeavy.font"
-        :scene
-      ]
-      [
         "/Fonts/PokemonBodyExtralight.font"
         :scene
       ]
@@ -127,12 +75,64 @@
         :scene
       ]
       [
+        "/Fonts/PokemonBodyBold.font"
+        :scene
+      ]
+      [
+        "/Test Images/Testing.atlas"
+        :scene
+      ]
+      [
+        "/Test Objects/Draggable Test.go"
+        :scene
+      ]
+      [
+        "/Test Collections/DraggingTest.collection"
+        :scene
+      ]
+      [
+        "/Test Objects/Text Test.go"
+        :scene
+      ]
+      [
+        "/Scripts/cursor.script"
+        :code
+      ]
+      [
+        "/JsonData/GetAllPokemon.py"
+        :code
+      ]
+      [
+        "/Fonts/PokemonBody.font"
+        :scene
+      ]
+      [
+        "/JsonData/pokemon.json"
+        :code
+      ]
+      [
+        "/Fonts/PokemonBodyHeavy.font"
+        :scene
+      ]
+      [
         "/Test Objects/TestPokemonPassport.go"
         :scene
       ]
       [
-        "/Fonts/PokemonBodyBold.font"
-        :scene
+        "/Scripts/JSONTesting.script"
+        :code
+      ]
+      [
+        "/Scripts/PassportFill.script"
+        :code
+      ]
+      [
+        "/input/game.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
       ]
     ]
   }

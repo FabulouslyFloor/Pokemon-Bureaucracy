@@ -1,7 +1,7 @@
 name: "DraggingTest"
 instances {
   id: "Cursor"
-  prototype: "/main/Cursor.go"
+  prototype: "/Objects/Cursor.go"
 }
 scale_along_z: 0
 embedded_instances {
@@ -36,7 +36,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"factory\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/main/Draggable Test.go\\\"\\n"
+  "  data: \"prototype: \\\"/Test Objects/TestPokemonPassport.go\\\"\\n"
   "\"\n"
   "}\n"
   ""

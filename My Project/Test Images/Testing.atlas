@@ -7,4 +7,10 @@ images {
 images {
   image: "/Test Images/WeirdServerPrideLogo.png"
 }
+images {
+  image: "/Test Images/TestingPassport.png"
+}
+images {
+  image: "/Test Images/TestingPassportLarge.png"
+}
 extrude_borders: 2

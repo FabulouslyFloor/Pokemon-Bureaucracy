@@ -1,6 +1,13 @@
+-----------------------------------------------------------------------------------------
+-- ***Current Testing Script***
+-- Spawns one instance of whichever prototype is loaded into the factory in DraggingTest.collection
+-- Currently: TestPokemonPassport.go
+-----------------------------------------------------------------------------------------
 function init(self)
+	-- Saves a position I chose for testing
 	local pos = vmath.vector3(450,450,0)
 
+	-- Spawns the loaded object at that position
 	factory.create("#factory", pos)	
 end
 

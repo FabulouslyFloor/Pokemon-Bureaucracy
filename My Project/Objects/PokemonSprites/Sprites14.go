@@ -8,4 +8,8 @@ embedded_components {
   "  texture: \"/Art/atlases/PokemonSprites14.atlas\"\n"
   "}\n"
   ""
+  scale {
+    x: 0.18
+    y: 0.18
+  }
 }

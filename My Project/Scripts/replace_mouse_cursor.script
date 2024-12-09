@@ -1,12 +1,22 @@
+----------------------------------------------------------------------------------------------------------- 
+-- This script utilizes the DEFOS libray to disable the machine cursor 
+-- This allows a custom sprite to be displayed
+-- This script is attached to Cursor.go 
+-----------------------------------------------------------------------------------------------------------
+-- Gets the width and height of the display from the system
 local WIDTH = tonumber(sys.get_config("display.width")) 
 local HEIGHT = tonumber(sys.get_config("display.height")) 
 
+-- Upon the script loading, get input 
 function init(self)
 	msg.post(".", "acquire_input_focus")
 end
 
+-- On input 
 function on_input(self, action_id, action)
+	-- Get the location of action on the screen
 	local screen = vmath.vector3(action.x, action.y, 0)
+	-- Set the cursor object to that location
 	go.set_position(screen)
 
 	-- enable/disable mouse cursor depending on if we're inside or outside the game window

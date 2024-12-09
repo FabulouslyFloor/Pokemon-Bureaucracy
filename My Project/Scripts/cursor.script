@@ -21,7 +21,9 @@ function init(self)
 
 	-- Initializing a series of Script Properties - as control variables
 	self.collision_id = nil     -- id of gameobject which the cursor collided with
+	self.collision_child_id = nil -- id of child of the gameobject collided with
 	self.dragged_id = nil       -- id of gameobject currently being dragged
+	self.dragged_child_id = nil -- id of child of the game object currently being dragged
 	self.dragged_pos = nil		-- The position of the dragged_id game object
 	self.pressed = false		-- Binary flag indicating if the user has touched the screen
 	-- or pressed the mouse button
@@ -33,14 +35,14 @@ end
 -- -------------------------------------------------------------------------------------------
 function update(self, dt)
 	-- Set the render clear color--aka, screen color when nothing is rendered
-	msg.post("@render:", "clear_color",
-	{ color = vmath.vector4(95 /256, 129 / 256, 161 / 256, 1 ) })
+	msg.post("@render:", "clear_color", { color = vmath.vector4(95 /256, 129 / 256, 161 / 256, 1 ) })
 
 	-- Get the current position of the cursor
 	local pos = go.get_position()
 
-	-- Reset the control variable for collision_id each frame
+	-- Reset the control variable for collision_id & collision_child_id each frame
 	self.collision_id = nil
+	self.collision_child_id = nil
 end
 
 
@@ -53,13 +55,19 @@ function on_message(self, message_id, message, sender)
 	-- When a collision message is received -- set self.collision_id to the id of 
 	-- the top-most game object which is pointed to (aka, colliding with) the cursor object
 	if message_id == hash("collision_response") then
-		if not self.collision_id or
-		go.get_position(self.collision_id).z < message.other_position.z then
+		if not self.collision_id or go.get_position(self.collision_id).z < message.other_position.z then
 			self.collision_id = message.other_id
 		end
 	end
-end
 
+	-- When the colliding object sends a message indicating it has a child object that needs to move with it
+	-- !! If more draggable objects with children are made, code which indicates the top most one needs to
+	-- be added
+	if message_id == hash("child") then
+		-- Save the childs Id
+		self.collision_child_id = message.child_id
+	end
+end
 
 -- -------------------------------------------------------------------------------------------
 -- The on_input() function receives input actions dispatched from the Defold Game Engine
@@ -85,11 +93,23 @@ function on_input(self, action_id, action)
 			msg.post("#collisionobject", "disable")
 			self.pressed = false
 			self.dragged_id = nil
+			self.dragged_child_id = nil
 			self.dragging = false
 
 			-- Reset the scale to 1.0 on Selected GameObject when released
 			local s1 = vmath.vector3(1.0, 1.0, 1.0)
 			go.set_scale(s1, self.collision_id)
+			-- Update scale and position of the Selected GameObject's child
+			-- Get position of the Selected GameObject
+			local passportPosition = go.get_position(self.collision_id)
+			-- Transform the vector coordinates relative to where the child should be
+			passportPosition.x = passportPosition.x - 138
+			passportPosition.y = passportPosition.y + 68
+			passportPosition.z = 1
+			-- Set new position of the child
+			go.set_position(passportPosition, self.collision_child_id)
+			-- Reset the scale to 1.0 on the child of the Selected Object
+			go.set_scale(s1, self.collision_child_id)
 		end
 
 		-- Upon a Click/Touch -- if the cursor has collided with another GameObject and
@@ -98,11 +118,23 @@ function on_input(self, action_id, action)
 
 		if self.pressed and self.collision_id and not self.dragged_id then
 			self.dragged_id = self.collision_id
+			self.dragged_child_id = self.collision_child_id
 			self.dragged_pos = action_pos
 
 			-- Increase Scale for selected GameObject when selected
 			local s2 = vmath.vector3(1.2, 1.2, 1.0)
 			go.set_scale(s2, self.collision_id)
+			-- Update scale and position of the Selected GameObject's child
+			-- Get position of the Selected GameObject
+			local passportPosition = go.get_position(self.collision_id)
+			-- Transform the vector coordinates relative to where the child should be when scaled up
+			passportPosition.x = passportPosition.x - 165.6
+			passportPosition.y = passportPosition.y + 81.6
+			passportPosition.z = 1
+			-- Set new position of the child
+			go.set_position(passportPosition, self.collision_child_id)
+			-- Set the scale to 1.2 on the child of the Selected Object
+			go.set_scale(s2, self.collision_child_id)
 		end
 
 		-- Set self.dragging to true if user has clicked a GameObject and moves it
@@ -110,9 +142,18 @@ function on_input(self, action_id, action)
 			self.dragging = true
 		end
 
-		-- Update the position of a dragged GameObject
+		-- Update the position of a dragged GameObject and Child
 		if self.dragging then
+			-- Update position of GameObject
 			go.set_position(action_pos, self.dragged_id)
+			-- Get position of the Selected GameObject
+			local passportPosition = go.get_position(self.collision_id)
+			-- Transform the vector coordinates relative to where the child should be when scaled up
+			passportPosition.x = passportPosition.x - 165.6
+			passportPosition.y = passportPosition.y + 81.6
+			passportPosition.z = 1
+			-- Set new position of the child
+			go.set_position(passportPosition, self.dragged_child_id)
 		end
 	end
 end

@@ -7,91 +7,103 @@
   :workflow {
     :recent-files [
       [
-        "/main/JSONTesting.script"
+        "/Fonts/PokemonBodyHeavy.font"
+        :scene
+      ]
+      [
+        "/input/game.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites2.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites3.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites4.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites5.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites6.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites7.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites8.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites9.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites10.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites11.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites12.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites13.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites14.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites15.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites16.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites17.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites18.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites19.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites20.go"
+        :scene
+      ]
+      [
+        "/Objects/PokemonSprites/Sprites21.go"
+        :scene
+      ]
+      [
+        "/Scripts/Sprites.script"
         :code
       ]
       [
-        "/main/main.collection"
-        :scene
-      ]
-      [
-        "/main/cursor.lua"
-        :code
-      ]
-      [
-        "/Scripts/DragSpawningScript.script"
-        :code
-      ]
-      [
-        "/main/cursor.script"
-        :code
-      ]
-      [
-        "/Scripts/replace_mouse_cursor.script"
-        :code
-      ]
-      [
-        "/main/Cursor.go"
-        :scene
-      ]
-      [
-        "/main/Draggable Test.go"
-        :scene
-      ]
-      [
-        "/main/Text Test.go"
-        :scene
-      ]
-      [
-        "/main/DraggingTest.collection"
-        :scene
-      ]
-      [
-        "/Test Collections/main.collection"
-        :scene
-      ]
-      [
-        "/Fonts/Como Typeface/PokemonBodyMedium.font"
-        :scene
-      ]
-      [
-        "/Fonts/PokemonHeaders.font"
-        :scene
-      ]
-      [
-        "/Fonts/PokemonBodyLight.font"
-        :scene
-      ]
-      [
-        "/Fonts/PokemonBodySemiBold.font"
-        :scene
-      ]
-      [
-        "/Fonts/PokemonBodyExtralight.font"
-        :scene
-      ]
-      [
-        "/Fonts/PokemonBodyExtrabold.font"
-        :scene
-      ]
-      [
-        "/Fonts/PokemonBodyBold.font"
-        :scene
-      ]
-      [
-        "/Test Images/Testing.atlas"
-        :scene
-      ]
-      [
-        "/Test Objects/Draggable Test.go"
-        :scene
-      ]
-      [
-        "/Test Collections/DraggingTest.collection"
-        :scene
-      ]
-      [
-        "/Test Objects/Text Test.go"
+        "/Objects/PokemonSprites/Sprites1.go"
         :scene
       ]
       [
@@ -99,24 +111,16 @@
         :code
       ]
       [
-        "/JsonData/GetAllPokemon.py"
-        :code
-      ]
-      [
-        "/Fonts/PokemonBody.font"
-        :scene
-      ]
-      [
-        "/JsonData/pokemon.json"
-        :code
-      ]
-      [
-        "/Fonts/PokemonBodyHeavy.font"
-        :scene
-      ]
-      [
         "/Test Objects/TestPokemonPassport.go"
         :scene
+      ]
+      [
+        "/Test Collections/DraggingTest.collection"
+        :scene
+      ]
+      [
+        "/Scripts/DragSpawningScript.script"
+        :code
       ]
       [
         "/Scripts/JSONTesting.script"
@@ -127,12 +131,8 @@
         :code
       ]
       [
-        "/input/game.input_binding"
-        :cljfx-form-view
-      ]
-      [
-        "/game.project"
-        :cljfx-form-view
+        "/Scripts/replace_mouse_cursor.script"
+        :code
       ]
     ]
   }

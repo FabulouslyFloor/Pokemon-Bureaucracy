@@ -1,12 +1,26 @@
+------------------------------------------------------------------------------------------ 
+-- ***Testing Script***
+-- This script was written to figure out how to access the JSON file and information stored 
+-- inside, as well as display them dynamically and interact with the pictures 
+-- It is only tied to the JSONTest collection
+------------------------------------------------------------------------------------------
+-- Create a variable to hold the JSONtable
 local jsonTable
+-- Create a dictionary to keep track of the spawned sprites 
 local spawnedSprites = {}
 
+-- Custom Function to select a random pokemon and display it's name and photo
 local function newMons()
+	-- Selects a random number between 1 and 1025
 	local chosenPokemon = math.random(1025)
+	-- Prints the number for debugging purposes
 	print(chosenPokemon)
+	-- Sets the first label to the name of the pokemon 
 	label.set_text("#pokemon1Name", jsonTable[tostring(chosenPokemon)]["name"])
-	
+
+	-- Conncatinates a string to match the name of (most) of the pictures
 	local img = tostring(chosenPokemon) .. "-1"
+	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
 	if chosenPokemon <= 50 then
 		id = factory.create("#PokemonSprite1",vmath.vector3(250,300,0))
 	elseif chosenPokemon > 50 and chosenPokemon <=100 then
@@ -50,16 +64,24 @@ local function newMons()
 	elseif chosenPokemon > 1000 and chosenPokemon <=1050 then
 		id = factory.create("#PokemonSprite21",vmath.vector3(250,300,0))
 	end
+	-- Inserts the ID in the table
 	table.insert(spawnedSprites, id)
+	-- Sends a message to the spawned instance to display the correct image 
 	msg.post(id,"play_animation", {id = hash(img)})
-	
+
+	-- Selects a random number between 1 and 1025
 	local chosenPokemon2 = math.random(1025)
+	-- Rerolls if the same number is chosen as the first pokemon
 	while chosenPokemon == chosenPokemon2 do
 		chosenPokemon2 = math.random(1025)
 	end
+	-- Prints for debugging purposes 
 	print(chosenPokemon2)
+	-- Sets the second label to the name of the pokemon 
 	label.set_text("#pokemon2Name", jsonTable[tostring(chosenPokemon2)]["name"])
+	-- Conncatinates a string to match the name of (most) of the pictures
 	img = tostring(chosenPokemon2) .. "-1"
+	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
 	if chosenPokemon2 <= 50 then
 		id = factory.create("#PokemonSprite1",vmath.vector3(750,300,0))
 	elseif chosenPokemon2 > 50 and chosenPokemon2 <=100 then
@@ -103,18 +125,39 @@ local function newMons()
 	elseif chosenPokemon2 > 1000 and chosenPokemon2 <=1050 then
 		id = factory.create("#PokemonSprite21",vmath.vector3(750,300,0))
 	end
+	-- Inserts the ID in the table
 	table.insert(spawnedSprites, id)
+	-- Sends a message to the spawned instance to display the correct image 
 	msg.post(id,"play_animation", {id = hash(img)})
 end
 
+-- When the collection loads
 function init(self)
+	-- Get inputs
 	msg.post(".", "acquire_input_focus")
+	-- Seed random
 	math.randomseed(os.clock() * 100000000000)
+	-- Load the JSON file
 	local test_json_file = sys.load_resource("/res/json/pokemon.json")
+	-- Decode the JSON file and save to a variable for use
 	jsonTable = json.decode(test_json_file)
-	print(jsonTable[tostring(63)]["types"][0])
 
+	-- Call newMons() to display a pair of pokemon
 	newMons()
+end
+
+-- When input is recieved
+function on_input(self, action_id, action)
+	-- When left click happens
+	if action_id == hash("touch") then
+		-- While pressed
+		if action.pressed then
+			-- Delete old sprites spawned
+			go.delete(spawnedSprites)
+			-- Call newMons to display 2 new pokemon
+			newMons()
+		end
+	end
 end
 
 function final(self)
@@ -142,24 +185,6 @@ function on_message(self, message_id, message, sender)
 	-- Add message-handling code here
 	-- Learn more: https://defold.com/manuals/message-passing/
 	-- Remove this function if not needed
-end
-
-function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
-	--
-	--    msg.post(".", "acquire_input_focus")
-	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
-	if action_id == hash("touch") then
-		if action.pressed then
-			go.delete(spawnedSprites)
-			newMons()
-		end
-	end
 end
 
 function on_reload(self)

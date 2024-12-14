@@ -6,15 +6,14 @@
 -- Set up local variables
 -- Variable to save the ID of spawned objects 
 local id
+local jsonTable
 
--- Custom function which generates a new pokemon and gets all of it's information from the JSON file
-local function newMon()
-	-- Generates a random number from 1 to 1025
-	local chosenPokemon = math.random(1025)
-	-- ** For Testing Purposes
-	print(chosenPokemon)
+local function name(chosenPokemon)
 	-- Sets Name Label
 	label.set_text("#Name", jsonTable[tostring(chosenPokemon)]["name"])
+end
+
+local function types(chosenPokemon)
 	-- Sets Type 1 Label
 	label.set_text("#Type1", jsonTable[tostring(chosenPokemon)]["types"][1])
 	-- Sets Type 2 Label
@@ -26,23 +25,39 @@ local function newMon()
 		-- If there is a second type, sets the label to it
 		label.set_text("#Type2", jsonTable[tostring(chosenPokemon)]["types"][2])
 	end
+end
+
+local function height(chosenPokemon)
 	-- Sets Height Label
 	label.set_text("#Height", jsonTable[tostring(chosenPokemon)]["height"])
+end
+
+local function weight(chosenPokemon)
 	-- Sets Weight Label 
 	label.set_text("#Weight", jsonTable[tostring(chosenPokemon)]["weight"])
+end
+
+local function ability(chosenPokemon)
 	-- Sets Ability Label
 	label.set_text("#Ability", jsonTable[tostring(chosenPokemon)]["abilities"])
+end
+
+local function gender(chosenPokemon)
 	-- Sets Gender Label
 	label.set_text("#Gender", jsonTable[tostring(chosenPokemon)]["gender"][1])
+end
+
+local function moves(chosenPokemon)
 	-- Sets Moves Label
 	label.set_text("#Move1", jsonTable[tostring(chosenPokemon)]["moves"][1])
 	label.set_text("#Move2", jsonTable[tostring(chosenPokemon)]["moves"][2])
+end
 
+local function photo(chosenPokemon)
 	-- Concatenates the name of (most) pokemons images
 	local img = tostring(chosenPokemon) .. "-1"
-
 	-- Get's the position of the TestPokemonPassport object
-	position = go.get_position()
+	local position = go.get_position()
 	-- Determines which factory contains the sprite, spawns an instance at the relative position
 	-- and saves it's ID
 	if chosenPokemon <= 50 then
@@ -90,6 +105,30 @@ local function newMon()
 	end
 	-- Sends a message to the spawned instance to display the correct sprite
 	msg.post(id,"play_animation", {id = hash(img)})
+end
+
+-- Custom function which generates a new pokemon and gets all of it's information from the JSON file
+local function newMon()
+	-- Generates a random number from 1 to 1025
+	local chosenPokemon = math.random(1025)
+	-- ** For Testing Purposes
+	print(chosenPokemon)
+	-- Sets Name Label
+	name(chosenPokemon)
+	-- Sets Type Labels
+	types(chosenPokemon)
+	-- Sets Height Label
+	height(chosenPokemon)
+	-- Sets Weight Label 
+	weight(chosenPokemon)
+	-- Sets Ability Label
+	ability(chosenPokemon)
+	-- Sets Gender Label
+	gender(chosenPokemon)
+	-- Sets Moves Label
+	moves(chosenPokemon)
+	-- Spawns photo
+	photo(chosenPokemon)
 end
 
 -- When the Passport object is first spawned

@@ -127,11 +127,11 @@
         :code
       ]
       [
-        "/Scripts/PassportFill.script"
+        "/Scripts/replace_mouse_cursor.script"
         :code
       ]
       [
-        "/Scripts/replace_mouse_cursor.script"
+        "/Scripts/PassportFill.script"
         :code
       ]
     ]
